@@ -1,0 +1,16 @@
+@import "./styles/variables.css";
+@import "./styles/globals.css";
+@import "./styles/utilities.css";
+
+@import "./styles/navbar.css";
+@import "./styles/hero.css";
+@import "./styles/sectionTitle.css";
+@import "./styles/about.css";
+@import "./styles/skills.css";
+@import "./styles/projects.css";
+
+@import "./styles/button.css";
+
+@import "./styles/whyme.css";
+@import "./styles/contact.css";
+@import "./styles/footer.css";

@@ -1,0 +1,164 @@
+.projects{
+    padding:140px 0;
+}
+
+.projects-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.project-card{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(212,175,55,.12);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+    backdrop-filter:blur(15px);
+
+}
+
+.project-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:#D4AF37;
+
+    box-shadow:0 20px 60px rgba(212,175,55,.18);
+
+}
+
+.project-image{
+
+    height:220px;
+
+    overflow:hidden;
+
+    background:#111;
+
+}
+
+.project-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.45s ease;
+
+}
+
+.project-card:hover .project-image img{
+
+    transform:scale(1.08);
+
+}
+
+.project-content{
+
+    padding:28px;
+
+}
+
+.project-content h3{
+
+    font-size:1.5rem;
+
+    margin-bottom:15px;
+
+}
+
+.project-content p{
+
+    color:#A1A1AA;
+
+    line-height:1.7;
+
+    margin-bottom:20px;
+
+}
+
+.project-content span{
+
+    display:inline-block;
+
+    color:#D4AF37;
+
+    font-size:.9rem;
+
+    margin-bottom:28px;
+
+}
+
+.project-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+@media(max-width:768px){
+
+.project-buttons{
+
+justify-content:center;
+
+}
+
+}
+.project-tags{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:25px;
+}
+
+.project-tag{
+    padding:8px 14px;
+    border-radius:999px;
+    background:rgba(212,175,55,.12);
+    border:1px solid rgba(212,175,55,.25);
+    color:#D4AF37;
+    font-size:.85rem;
+    font-weight:600;
+}
+.primary-btn,
+.secondary-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    text-decoration:none;
+}
+.project-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.project-buttons a{
+    flex:1;
+}
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}

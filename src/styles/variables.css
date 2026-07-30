@@ -1,0 +1,24 @@
+:root {
+
+  /* Colors */
+  --background: #050505;
+  --surface: #101010;
+  --surface-light: #181818;
+
+  --primary: #D4AF37;
+  --primary-light: #F3D27A;
+
+  --text: #FAFAFA;
+  --muted: #9A9A9A;
+
+  --border: rgba(212,175,55,.15);
+
+  /* Layout */
+  --container: 1240px;
+
+  --radius: 22px;
+
+  /* Transition */
+  --transition: .35s ease;
+
+}

@@ -1,0 +1,12 @@
+.container{
+    width:min(100% - 40px,var(--container));
+    margin-inline:auto;
+}
+
+.section{
+    padding:120px 0;
+}
+
+.gold{
+    color:var(--primary);
+}
