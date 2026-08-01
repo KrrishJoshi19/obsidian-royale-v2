@@ -6,16 +6,16 @@ const projects = [
   {
     title: "Portfolio Website",
     description:
-      "A premium personal portfolio built using React, Vite and modern UI principles.",
-    tech: ["React", "CSS", "Vite"],
+      "Responsive portfolio showcasing my projects, skills and modern UI development using React and Vite.",
+    tech: [ React ]   [ Vite ]   [ CSS ],
     image: "/images/project1.jpg",
-    github: "#",
-    live: "#",
+    github: "https://github.com/KrrishJoshi19/portfolio",
+    live: "https://krrishjoshi19.github.io/Portfolio/"
   },
   {
     title: "Network Security using VPN & NAT",
     description:
-      "Cisco Packet Tracer project demonstrating secure communication using VPN and NAT.",
+      "Secure network simulation built in Cisco Packet Tracer implementing VPN tunneling and NAT for protected communication.",
     tech: ["Cisco", "VPN", "NAT"],
     image: "/images/project2.jpg",
     github: "#",
@@ -24,7 +24,7 @@ const projects = [
   {
     title: "MediLab",
     description:
-      "Medical laboratory management website with modern dashboard and responsive interface.",
+      "Full-stack laboratory management system with responsive dashboard, patient records and appointment management.",
     tech: ["React", "Node.js", "MongoDB"],
     image: "/images/project3.jpg",
     github: "#",
