@@ -7,7 +7,7 @@ const projects = [
     title: "Portfolio Website",
     description:
       "Responsive portfolio showcasing my projects, skills and modern UI development using React and Vite.",
-    tech: [ React ]   [ Vite ]   [ CSS ],
+    tech: ["React", "Vite", "CSS"],
     image: "/images/project1.jpg",
     github: "https://github.com/KrrishJoshi19/portfolio",
     live: "https://krrishjoshi19.github.io/Portfolio/"

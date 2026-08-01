@@ -1,3 +1,5 @@
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import "../styles/contact.css";
 import Reveal from "../components/Reveal";
 
@@ -21,6 +23,37 @@ const contactInfo = [
 ];
 
 function Contact() {
+  const form = useRef();
+
+  const [loading, setLoading] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        alert("✅ Message Sent Successfully!");
+
+        form.current.reset();
+
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+
+        alert("❌ Failed to send message");
+
+        setLoading(false);
+      });
+  };
   return (
     <section id="contact" className="contact section">
       <div className="container">
@@ -96,7 +129,11 @@ function Contact() {
 
           <Reveal delay={0.2}>
 
-            <form className="contact-form">
+            <form
+              ref={form}
+              onSubmit={sendEmail}
+              className="contact-form"
+            >
 
               <div className="form-heading">
 
@@ -118,7 +155,9 @@ function Contact() {
 
                 <input
                   type="text"
+                  name="from_name"
                   placeholder="Enter your name"
+                  required
                 />
 
               </div>
@@ -131,7 +170,9 @@ function Contact() {
 
                 <input
                   type="email"
+                  name="from_email"
                   placeholder="Enter your email"
+                  required
                 />
 
               </div>
@@ -144,16 +185,20 @@ function Contact() {
 
                 <textarea
                   rows="6"
+                  name="message"
                   placeholder="Write your message..."
+                  required
                 ></textarea>
 
               </div>
 
               <button
-                className="primary-btn contact-submit"
                 type="submit"
+                className="primary-btn contact-submit"
               >
-                Send Message
+
+                {loading ? "Sending..." : "Send Message"}
+
               </button>
 
             </form>
