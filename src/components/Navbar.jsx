@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import "../styles/navbar.css";
 
 function Navbar() {
+  const [active, setActive] = useState("home");
+
   const navLinks = [
     "Home",
     "About",
@@ -10,26 +11,25 @@ function Navbar() {
     "Contact",
   ];
 
-  const [activeSection, setActiveSection] = useState("home");
-  const [scrolled, setScrolled] = useState(false);
-
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
+    const sections = document.querySelectorAll("section");
 
-      const sections = document.querySelectorAll("section");
+    const handleScroll = () => {
+      let current = "home";
 
       sections.forEach((section) => {
-        const top = section.offsetTop - 120;
-        const bottom = top + section.offsetHeight;
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.offsetHeight;
 
         if (
-          window.scrollY >= top &&
-          window.scrollY < bottom
+          window.scrollY >= sectionTop &&
+          window.scrollY < sectionTop + sectionHeight
         ) {
-          setActiveSection(section.id);
+          current = section.id;
         }
       });
+
+      setActive(current);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -41,35 +41,27 @@ function Navbar() {
   }, []);
 
   return (
-    <header className={scrolled ? "header scrolled" : "header"}>
-
+    <header>
       <nav>
-
         <div className="logo">
           <span>KJ</span>
         </div>
 
         <ul>
-
           {navLinks.map((item) => (
-
             <li key={item}>
-
               <a
                 href={`#${item.toLowerCase()}`}
                 className={
-                  activeSection === item.toLowerCase()
-                    ? "active"
+                  active === item.toLowerCase()
+                    ? "active-link"
                     : ""
                 }
               >
                 {item}
               </a>
-
             </li>
-
           ))}
-
         </ul>
 
         <a
@@ -80,9 +72,7 @@ function Navbar() {
         >
           Resume
         </a>
-
       </nav>
-
     </header>
   );
 }

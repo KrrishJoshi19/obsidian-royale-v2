@@ -160,3 +160,16 @@ nav li a.active::after {
   box-shadow: 0 12px 40px rgba(0, 0, 0, .25);
 
 }
+/* Active Link */
+
+.active-link{
+
+    color:#D4AF37 !important;
+
+}
+
+.active-link::after{
+
+    width:100% !important;
+
+}

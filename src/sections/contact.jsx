@@ -6,15 +6,15 @@ import Reveal from "../components/Reveal";
 const contactInfo = [
   {
     title: "Email",
-    value: "yourmail@gmail.com",
+    value: "joshikrrish196@gmail.com",
   },
   {
     title: "GitHub",
-    value: "github.com/KrrishJoshi19",
+    value: "https://github.com/KrrishJoshi19",
   },
   {
     title: "LinkedIn",
-    value: "linkedin.com/in/yourprofile",
+    value: "https://linkedin.com/in/KrrishJoshi",
   },
   {
     title: "Location",
@@ -26,6 +26,7 @@ function Contact() {
   const form = useRef();
 
   const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -40,23 +41,42 @@ function Contact() {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
-        alert("✅ Message Sent Successfully!");
+        setStatus("success");
 
         form.current.reset();
 
         setLoading(false);
+
+        setTimeout(() => {
+          setStatus("");
+        }, 3000);
       })
       .catch((error) => {
         console.error(error);
 
-        alert("❌ Failed to send message");
+        setStatus("error");
 
         setLoading(false);
+
+        setTimeout(() => {
+          setStatus("");
+        }, 3000);
       });
   };
   return (
     <section id="contact" className="contact section">
       <div className="container">
+        {status === "success" && (
+          <div className="toast success">
+            ✅ Message sent successfully!
+          </div>
+        )}
+
+        {status === "error" && (
+          <div className="toast error">
+            ❌ Failed to send message.
+          </div>
+        )}
 
         <Reveal>
           <div className="contact-heading">
