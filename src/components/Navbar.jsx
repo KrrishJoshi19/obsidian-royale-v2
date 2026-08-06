@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Menu, X } from "lucide-react";
 
 function Navbar() {
   const [active, setActive] = useState("home");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
     "Home",
@@ -36,9 +38,10 @@ function Navbar() {
 
     handleScroll();
 
-    return () =>
-      window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header>
@@ -47,7 +50,7 @@ function Navbar() {
           <span>KJ</span>
         </div>
 
-        <ul>
+        <ul className={menuOpen ? "nav-links active" : "nav-links"}>
           {navLinks.map((item) => (
             <li key={item}>
               <a
@@ -57,21 +60,40 @@ function Navbar() {
                     ? "active-link"
                     : ""
                 }
+                onClick={closeMenu}
               >
                 {item}
               </a>
             </li>
           ))}
+
+          <li className="mobile-resume">
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              onClick={closeMenu}
+            >
+              Resume
+            </a>
+          </li>
         </ul>
 
         <a
           href="/resume.pdf"
           target="_blank"
           rel="noreferrer"
-          className="resume-btn"
+          className="resume-btn desktop-resume"
         >
           Resume
         </a>
+
+        <button
+          className="menu-btn"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </nav>
     </header>
   );
