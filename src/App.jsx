@@ -1,3 +1,7 @@
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+
+import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import Hero from "./sections/Hero";
 import WhyMe from "./sections/WhyMe";
@@ -9,8 +13,14 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   return (
     <>
+      <AnimatePresence mode="wait">
+        {loading && <Loader key="loader" onComplete={() => setLoading(false)} />}
+      </AnimatePresence>
+
       <Navbar />
 
       <main>

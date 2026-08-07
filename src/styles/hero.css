@@ -31,7 +31,7 @@
 .hero-bg-grid {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(212, 175, 55, 0.12) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 1px);
   background-size: 38px 38px;
   mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.85) 10%, transparent 75%);
   -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,0.85) 10%, transparent 75%);

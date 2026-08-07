@@ -24,11 +24,11 @@ const projects = [
   {
     title: "MediLab",
     description:
-      "Full-stack laboratory management system with responsive dashboard, patient records and appointment management.",
+      "MediLab is a modern pathology laboratory platform designed to simplify test booking, digital report management, and healthcare workflows through an intuitive and responsive user interface.",
     tech: ["React", "Node.js", "MongoDB"],
     image: "/images/project3.jpg",
     github: "#",
-    live: "#",
+    live: "https://medilab-jw45.onrender.com/",
   },
 ];
 
