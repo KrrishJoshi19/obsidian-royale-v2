@@ -2,17 +2,22 @@
 @import "./styles/globals.css";
 @import "./styles/utilities.css";
 
+@import "./components/customCursor.css";
+@import "./styles/themeSwitcher.css";
+@import "./styles/commandPalette.css";
+@import "./styles/networkModal.css";
+
 @import "./styles/loader.css";
 @import "./styles/navbar.css";
 @import "./styles/hero.css";
 @import "./styles/sectionTitle.css";
+@import "./styles/whyme.css";
 @import "./styles/about.css";
 @import "./styles/skills.css";
+@import "./styles/timeline.css";
 @import "./styles/projects.css";
+@import "./styles/contact.css";
 
 @import "./styles/Button.css";
-
-@import "./styles/whyme.css";
-@import "./styles/contact.css";
 @import "./styles/footer.css";
 @import "./styles/scrollToTop.css";

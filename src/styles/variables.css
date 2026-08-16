@@ -1,24 +1,86 @@
-:root {
-
-  /* Colors */
+:root, [data-theme="gold"] {
   --background: #050505;
-  --surface: #101010;
+  --surface: #0E0E0E;
   --surface-light: #181818;
+  --surface-border: rgba(212, 175, 55, 0.2);
 
+  --primary-rgb: 212, 175, 55;
   --primary: #D4AF37;
-  --primary-light: #F3D27A;
+  --primary-light: #F5E08C;
+  --primary-dark: #A6851E;
+
+  --accent-rgb: 245, 224, 140;
+  --accent: #F5E08C;
 
   --text: #FAFAFA;
-  --muted: #9A9A9A;
+  --muted: #A1A1AA;
+  --dim: #71717A;
 
-  --border: rgba(212,175,55,.15);
+  --border: rgba(var(--primary-rgb), 0.2);
+  --border-hover: rgba(var(--primary-rgb), 0.5);
+  --primary-glow: rgba(var(--primary-rgb), 0.35);
 
-  /* Layout */
   --container: 1240px;
+  --radius: 20px;
+  --transition: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-  --radius: 22px;
+[data-theme="cyan"] {
+  --surface-border: rgba(0, 242, 254, 0.2);
+  --primary-rgb: 0, 242, 254;
+  --primary: #00F2FE;
+  --primary-light: #70F7FF;
+  --primary-dark: #00A6B2;
 
-  /* Transition */
-  --transition: .35s ease;
+  --accent-rgb: 79, 172, 254;
+  --accent: #4FACFE;
 
+  --border: rgba(var(--primary-rgb), 0.25);
+  --border-hover: rgba(var(--primary-rgb), 0.6);
+  --primary-glow: rgba(var(--primary-rgb), 0.4);
+}
+
+[data-theme="purple"] {
+  --surface-border: rgba(168, 85, 247, 0.2);
+  --primary-rgb: 168, 85, 247;
+  --primary: #A855F7;
+  --primary-light: #C084FC;
+  --primary-dark: #7E22CE;
+
+  --accent-rgb: 217, 70, 239;
+  --accent: #D946EF;
+
+  --border: rgba(var(--primary-rgb), 0.25);
+  --border-hover: rgba(var(--primary-rgb), 0.6);
+  --primary-glow: rgba(var(--primary-rgb), 0.4);
+}
+
+[data-theme="emerald"] {
+  --surface-border: rgba(16, 185, 129, 0.2);
+  --primary-rgb: 16, 185, 129;
+  --primary: #10B981;
+  --primary-light: #34D399;
+  --primary-dark: #059669;
+
+  --accent-rgb: 52, 211, 153;
+  --accent: #34D399;
+
+  --border: rgba(var(--primary-rgb), 0.25);
+  --border-hover: rgba(var(--primary-rgb), 0.6);
+  --primary-glow: rgba(var(--primary-rgb), 0.4);
+}
+
+[data-theme="sunset"] {
+  --surface-border: rgba(255, 99, 71, 0.2);
+  --primary-rgb: 255, 99, 71;
+  --primary: #FF6347;
+  --primary-light: #FF8C00;
+  --primary-dark: #CD3700;
+
+  --accent-rgb: 255, 140, 0;
+  --accent: #FF8C00;
+
+  --border: rgba(var(--primary-rgb), 0.25);
+  --border-hover: rgba(var(--primary-rgb), 0.6);
+  --primary-glow: rgba(var(--primary-rgb), 0.4);
 }

@@ -1,106 +1,132 @@
-.skills{
-    padding:140px 0;
-    text-align:center;
+.skills {
+  padding: 100px 0;
+  position: relative;
 }
 
-.section-tag{
-    color:#D4AF37;
-    letter-spacing:4px;
-    font-size:.9rem;
-    margin-bottom:20px;
+.skills-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 26px;
 }
 
-.section-title{
-    font-size:clamp(2.8rem,5vw,4rem);
-    margin-bottom:20px;
+.skill-tab-btn {
+  padding: 8px 20px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-.section-text{
-    max-width:700px;
-    margin:0 auto 70px;
-    color:#A1A1AA;
-    line-height:1.8;
-    font-size:1.05rem;
+.skill-tab-btn:hover {
+  background: rgba(var(--primary-rgb), 0.1);
+  color: var(--text);
 }
 
-.skills-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:30px;
-
+.skill-tab-btn.active {
+  background: var(--primary);
+  color: #050505;
+  border-color: var(--primary);
+  box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.35);
+  font-weight: 700;
 }
 
-.skill-card{
-
-    background:rgba(255,255,255,.03);
-
-    border:1px solid rgba(212,175,55,.12);
-
-    border-radius:24px;
-
-    padding:40px 25px;
-
-    transition:.35s ease;
-
-    backdrop-filter:blur(14px);
-
+.skills-matrix-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
 }
 
-.skill-card:hover{
-
-    transform:translateY(-10px);
-
-    border-color:#D4AF37;
-
-    box-shadow:0 20px 60px rgba(212,175,55,.15);
-
+.skill-matrix-card {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(var(--primary-rgb), 0.18);
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.skill-card h3{
-
-    font-size:1.6rem;
-
-    margin-bottom:12px;
-
-    color:#FAFAFA;
-
+.skill-matrix-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--primary-rgb), 0.5);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(var(--primary-rgb), 0.12);
 }
 
-.skill-card p{
-
-    color:#A1A1AA;
-
-    line-height:1.7;
-
+.skill-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-@media(max-width:900px){
-
-.skills-grid{
-
-grid-template-columns:1fr;
-
+.skill-emoji-badge {
+  font-size: 1.6rem;
+  line-height: 1;
 }
 
+.skill-cat-pill {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 50px;
+  background: rgba(var(--primary-rgb), 0.12);
+  border: 1px solid rgba(var(--primary-rgb), 0.25);
+  color: var(--primary-light);
 }
-.skill-icon{
-    color:#D4AF37;
-    margin-bottom:20px;
-    display:block;
-    margin-inline:auto;
-    transition:.35s ease;
+
+.skill-matrix-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
 }
 
-.skill-card:hover .skill-icon{
-    transform:rotate(8deg) scale(1.1);
+.skill-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
 }
-.skill-emoji{
 
-    font-size:3rem;
+.skill-progress-wrap {
+  margin-top: auto;
+}
 
-    margin-bottom:22px;
+.skill-progress-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
 
+.skill-percent {
+  color: var(--primary-light);
+  font-family: monospace;
+}
+
+.skill-progress-track {
+  width: 100%;
+  height: 6px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.skill-progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  box-shadow: 0 0 10px var(--primary);
+  transition: width 1s ease-out;
 }

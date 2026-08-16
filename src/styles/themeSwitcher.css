@@ -1,0 +1,122 @@
+.theme-switcher-container {
+  position: relative;
+  display: inline-block;
+}
+
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(var(--primary-rgb), 0.25);
+  color: var(--text);
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(var(--primary-rgb), 0.12);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.theme-btn-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+.theme-popover {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 220px;
+  background: rgba(15, 15, 15, 0.95);
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
+  border-radius: 16px;
+  padding: 14px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(var(--primary-rgb), 0.15);
+  z-index: 1001;
+  animation: fadeInPop 0.25s ease-out forwards;
+}
+
+@keyframes fadeInPop {
+  from { opacity: 0; transform: translateY(-10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.theme-popover-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.theme-close-btn {
+  color: var(--muted);
+  padding: 2px;
+  border-radius: 4px;
+  transition: color 0.2s;
+}
+
+.theme-close-btn:hover {
+  color: var(--text);
+}
+
+.theme-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.theme-option-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.theme-option-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.theme-option-item.active {
+  background: rgba(var(--primary-rgb), 0.15);
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+.theme-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.theme-name {
+  flex: 1;
+}
+
+.theme-check {
+  color: var(--primary);
+}

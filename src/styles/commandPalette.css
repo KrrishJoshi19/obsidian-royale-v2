@@ -1,0 +1,221 @@
+.cmd-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: cmdFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cmdFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.cmd-modal-container {
+  width: min(650px, 95vw);
+  max-height: 85vh;
+  background: #0B0B0C;
+  border: 1px solid rgba(var(--primary-rgb), 0.35);
+  border-radius: 20px;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.85), 0 0 40px rgba(var(--primary-rgb), 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: cmdSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cmdSlideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.cmd-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(var(--primary-rgb), 0.18);
+}
+
+.cmd-header-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+.cmd-header-icon {
+  color: var(--primary);
+}
+
+.cmd-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 50px;
+  background: rgba(var(--primary-rgb), 0.15);
+  border: 1px solid rgba(var(--primary-rgb), 0.3);
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+.cmd-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cmd-kbd-hint {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cmd-close-btn {
+  color: var(--muted);
+  padding: 4px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.cmd-close-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text);
+}
+
+.cmd-terminal-body {
+  padding: 18px 20px;
+  max-height: 240px;
+  overflow-y: auto;
+  font-family: "JetBrains Mono", "Fira Code", monospace, sans-serif;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: #060607;
+}
+
+.cmd-log-line {
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.cmd-log-line.system {
+  color: var(--dim);
+}
+
+.cmd-log-line.user {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.cmd-log-line.output {
+  color: var(--text);
+  opacity: 0.9;
+}
+
+.cmd-log-line.success {
+  color: #4ADE80;
+  font-weight: 600;
+}
+
+.cmd-log-line.error {
+  color: #F87171;
+}
+
+.cmd-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cmd-prompt-symbol {
+  color: var(--primary);
+  font-weight: 800;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+
+.cmd-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.cmd-input::placeholder {
+  color: var(--dim);
+}
+
+.cmd-run-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.cmd-run-btn:hover {
+  transform: translateX(2px);
+}
+
+.cmd-quick-suggestions {
+  padding: 14px 20px 18px;
+  background: #0B0B0C;
+}
+
+.cmd-suggestions-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.cmd-chips-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cmd-chip {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(var(--primary-rgb), 0.2);
+  color: var(--text);
+  font-size: 0.8rem;
+  font-family: monospace;
+  transition: all 0.2s ease;
+}
+
+.cmd-chip:hover {
+  background: rgba(var(--primary-rgb), 0.15);
+  border-color: var(--primary);
+  color: var(--primary-light);
+}
