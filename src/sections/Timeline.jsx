@@ -30,7 +30,7 @@ const milestones = [
   },
   {
     year: "2026 - Present",
-    title: "Obsidian Royale Portfolio v2 & Portfolio Suite",
+    title: "Personal Portfolio",
     subtitle: "Modern Creative Web Engineering",
     icon: Award,
     desc: "Designed and developed ultra-creative glassmorphic web applications with dynamic audio feedback, command palette CLI, and 60fps animations.",

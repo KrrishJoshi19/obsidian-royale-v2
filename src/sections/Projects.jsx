@@ -39,7 +39,7 @@ const projects = [
     ],
   },
   {
-    title: "Obsidian Royale Portfolio v2",
+    title: "Personal Portfolio",
     category: "Full-Stack Web",
     description:
       "Ultra-creative developer portfolio featuring dynamic color theme customizer, Cyber CLI Command Palette (Ctrl+K), Web Audio API sound synthesis, and Lenis smooth scrolling.",
