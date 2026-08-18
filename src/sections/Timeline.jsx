@@ -5,7 +5,7 @@ import "../styles/timeline.css";
 
 const milestones = [
   {
-    year: "2023 - Present",
+    year: "2024 - Present",
     title: "B.Tech in Computer Science Engineering",
     subtitle: "Specialization in Cloud Technology & Information Security",
     icon: GraduationCap,
@@ -13,7 +13,7 @@ const milestones = [
     highlights: ["Cloud Infrastructure", "Network Security", "Data Structures"],
   },
   {
-    year: "2024",
+    year: "2025",
     title: "Network Security & VPN/NAT Simulation Project",
     subtitle: "Cisco Packet Tracer Architecture",
     icon: ShieldCheck,
@@ -21,7 +21,7 @@ const milestones = [
     highlights: ["Cisco Packet Tracer", "VPN Tunnels", "NAT"],
   },
   {
-    year: "2024 - 2025",
+    year: "2025 - 2026",
     title: "MediLab Pathology & Healthcare Platform",
     subtitle: "Full Stack Web Development",
     icon: Code,
@@ -29,7 +29,7 @@ const milestones = [
     highlights: ["React", "Node.js", "MongoDB"],
   },
   {
-    year: "2025 - Present",
+    year: "2026 - Present",
     title: "Obsidian Royale Portfolio v2 & Portfolio Suite",
     subtitle: "Modern Creative Web Engineering",
     icon: Award,
